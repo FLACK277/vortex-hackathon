@@ -1,0 +1,7 @@
+Metric,Value
+Training R²,0.9829498617510231
+Testing R²,0.9412569712357681
+Testing MAE (kg/hour),5.2715938084954415
+Testing MSE,63.72921435272759
+Anomaly Detection Rate (%),5.0
+Total Anomalies Detected,216.0

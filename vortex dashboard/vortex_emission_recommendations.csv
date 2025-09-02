@@ -1,0 +1,4 @@
+category,priority,recommendation,potential_savings_kg_per_month
+Equipment Optimization,High,Optimize equipment efficiency during high utilization periods. 220 instances of high utilization (>80%) with high emissions (avg: 107.6 kg/hour).,591.7703395166453
+Anomaly Prevention,Critical,Investigate frequent anomalies at Factory_Floor (52 incidents). Implement predictive maintenance and real-time monitoring.,847.1687561726742
+Energy Efficiency,High,Improve energy efficiency in 432 instances with high emission-to-energy ratios. Consider renewable energy sources or equipment upgrades.,838.4682897334305

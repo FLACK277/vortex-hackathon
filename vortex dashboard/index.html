@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex Carbon Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+                    <h1>🌱 Vortex Carbon Monitoring System</h1>
+                    <p class="tagline">AI-Powered Environmental Intelligence</p>
+                </div>
+                <div class="header-info">
+                    <div class="datetime">
+                        <span id="current-datetime">Tuesday, September 02, 2025 - 12:00 PM IST</span>
+                    </div>
+                    <div class="system-status">
+                        <span class="status status--success" id="system-status">System Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Control Panel -->
+            <section class="controls">
+                <div class="controls-left">
+                    <button class="btn btn--primary" id="refresh-btn">
+                        <span>🔄 Refresh Data</span>
+                    </button>
+                    <select class="form-control location-filter" id="location-filter">
+                        <option value="">All Locations</option>
+                        <option value="Building_A">Building A</option>
+                        <option value="Building_B">Building B</option>
+                        <option value="Factory_Floor">Factory Floor</option>
+                        <option value="Office_Area">Office Area</option>
+                        <option value="Warehouse">Warehouse</option>
+                    </select>
+                </div>
+                <div class="controls-right">
+                    <button class="btn btn--outline" id="export-btn">📊 Export Data</button>
+                </div>
+            </section>
+
+            <!-- Metrics Grid -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Current Emission Rate</h3>
+                        <span class="metric-icon">⚡</span>
+                    </div>
+                    <div class="metric-value">
+                        <span class="value" id="current-rate">346.5</span>
+                        <span class="unit">kg/hour</span>
+                    </div>
+                    <div class="metric-change positive" id="rate-change">+2.3% from last hour</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Daily Total</h3>
+                        <span class="metric-icon">📊</span>
+                    </div>
+                    <div class="metric-value">
+                        <span class="value" id="daily-total">1,468</span>
+                        <span class="unit">kg CO₂</span>
+                    </div>
+                    <div class="metric-change negative" id="daily-change">-5.1% from yesterday</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Monthly Progress</h3>
+                        <span class="metric-icon">🎯</span>
+                    </div>
+                    <div class="metric-value">
+                        <span class="value" id="monthly-progress">72</span>
+                        <span class="unit">% to target</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 72%"></div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Active Alerts</h3>
+                        <span class="metric-icon">🚨</span>
+                    </div>
+                    <div class="metric-value">
+                        <span class="value" id="active-alerts">3</span>
+                        <span class="unit">alerts</span>
+                    </div>
+                    <div class="alert-breakdown">
+                        <span class="alert-item critical">1 Critical</span>
+                        <span class="alert-item warning">2 Warning</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Grid Layout -->
+            <div class="dashboard-grid">
+                <!-- Real-time Monitoring -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>🔴 Real-time Monitoring</h2>
+                        <span class="last-updated" id="last-updated">Last updated: 12:26 PM</span>
+                    </div>
+                    <div class="monitoring-table-container">
+                        <table class="monitoring-table" id="monitoring-table">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Current (kg/h)</th>
+                                    <th>Predicted (kg/h)</th>
+                                    <th>Variance</th>
+                                    <th>Status</th>
+                                    <th>Temp (°C)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="monitoring-tbody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Analytics Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>📈 ML Model Analytics</h2>
+                        <span class="model-version">Model v2.1.4</span>
+                    </div>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h4>Model Performance</h4>
+                            <div class="performance-metrics">
+                                <div class="perf-metric">
+                                    <span class="perf-label">R² Score</span>
+                                    <span class="perf-value">0.941</span>
+                                </div>
+                                <div class="perf-metric">
+                                    <span class="perf-label">MAE</span>
+                                    <span class="perf-value">5.27 kg</span>
+                                </div>
+                                <div class="perf-metric">
+                                    <span class="perf-label">Accuracy</span>
+                                    <span class="perf-value">94.1%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analytics-card">
+                            <h4>Anomaly Detection</h4>
+                            <div class="anomaly-stats">
+                                <div class="anomaly-metric">
+                                    <span class="anomaly-count">216</span>
+                                    <span class="anomaly-label">detected this month</span>
+                                </div>
+                                <div class="anomaly-rate">
+                                    <span class="rate-label">Detection Rate:</span>
+                                    <span class="rate-value">5.0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/bb33f5edc67f559bb8fed60ee16b1811/a36c7d54-f42f-487f-9efa-fb408deba0ee/4364f3ae.png" alt="ML Model Performance Dashboard" class="performance-chart">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Bottom Grid -->
+            <div class="bottom-grid">
+                <!-- Recommendations Panel -->
+                <section class="dashboard-section recommendations-section">
+                    <div class="section-header">
+                        <h2>🤖 AI Recommendations</h2>
+                        <span class="recommendations-count" id="recommendations-count">3 active recommendations</span>
+                    </div>
+                    <div class="recommendations-list" id="recommendations-list">
+                        <!-- Recommendations will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Carbon Offset Tracker -->
+                <section class="dashboard-section carbon-tracker">
+                    <div class="section-header">
+                        <h2>🌍 Carbon Footprint Analysis</h2>
+                        <button class="btn btn--sm btn--secondary" id="view-trends">View Trends</button>
+                    </div>
+                    <div class="carbon-content">
+                        <div class="carbon-metrics">
+                            <div class="carbon-metric">
+                                <span class="carbon-label">Total Emissions</span>
+                                <span class="carbon-value">265.7 tons</span>
+                            </div>
+                            <div class="carbon-metric">
+                                <span class="carbon-label">Target Reduction</span>
+                                <span class="carbon-value">35% (93.0 tons)</span>
+                            </div>
+                            <div class="carbon-metric">
+                                <span class="carbon-label">Potential Savings</span>
+                                <span class="carbon-value">2.28 tons/month</span>
+                            </div>
+                            <div class="carbon-metric">
+                                <span class="carbon-label">Cost Savings</span>
+                                <span class="carbon-value">$683.22 annually</span>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/bb33f5edc67f559bb8fed60ee16b1811/e689929d-ae37-4994-8e8e-16f8d44fa2c3/4dbec1c1.png" alt="Carbon Footprint Dashboard" class="footprint-chart">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Feature Importance -->
+            <section class="dashboard-section feature-importance">
+                <div class="section-header">
+                    <h2>🔍 Feature Importance</h2>
+                    <span class="feature-info">Model decision factors</span>
+                </div>
+                <div class="features-grid" id="features-grid">
+                    <!-- Feature importance will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for Export -->
+    <div class="modal hidden" id="export-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Export Data</h3>
+                <button class="modal-close" id="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Select data to export:</p>
+                <div class="export-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked> Real-time sensor data
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked> Model predictions
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Recommendations
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Carbon metrics
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="cancel-export">Cancel</button>
+                <button class="btn btn--primary" id="confirm-export">Download CSV</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
