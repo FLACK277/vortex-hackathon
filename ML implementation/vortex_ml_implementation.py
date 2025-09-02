@@ -510,10 +510,6 @@ class VortexCarbonMonitoringSystem:
             'alerts': alerts
         }
 
-# =============================================
-# MAIN EXECUTION - Run the complete Vortex system
-# =============================================
-
 if __name__ == "__main__":
     # Initialize and run the complete Vortex Carbon Monitoring System
     vortex_system = VortexCarbonMonitoringSystem()
